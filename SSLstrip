@@ -1,0 +1,14 @@
+attacker@M3 ~ $ iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+iptables v1.6.0: can't initialize iptables table `filter': Permission denied (you must be root)
+Perhaps iptables or your kernel needs to be upgraded.
+attacker@M3 ~ $ sudo -i
+[sudo] password for attacker: 
+M3 ~ # iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+M3 ~ # iptables -L INPUT
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http-alt
+M3 ~ # sslstrip -l 8080
+
+sslstrip 0.9 by Moxie Marlinspike running...
+
