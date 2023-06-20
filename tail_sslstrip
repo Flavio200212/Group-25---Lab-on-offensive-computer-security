@@ -1,0 +1,4 @@
+attacker@M3 ~ $ sudo -i
+[sudo] password for attacker: 
+M3 ~ # tail -f sslstrip.log
+
